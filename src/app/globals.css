@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+/* globals.css */
+:root {
+    --color-custom: #34b45f;
+  }
+  .bg-custom {
+    background-color: var(--color-custom);
+  }
+  .text-custom {
+    color: var(--color-custom);
+  }
+  .border-custom {
+    border-color: var(--color-custom);
+  }
+  
+  .bg-sacramento {
+    background-color: #338850;
+  }
+  .text-sacramento {
+    color: #043927;
+  }
