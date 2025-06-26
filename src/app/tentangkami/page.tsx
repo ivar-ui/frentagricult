@@ -41,7 +41,7 @@ export default function AboutUs() {
               We integrate artificial intelligence, drones, and data management to create more efficient and sustainable farming.
             </p>
             <p className="text-lg text-gray-700">
-              Founded in 2025, Frent.com emerged as a solution to the technological gap in Indonesia's agriculture sector. With a spirit of innovation, we strive to empower local farmers towards the future of agriculture.
+              Founded in 2025, Frent.com emerged as a solution to the technological gap in Indonesia&apos;s agriculture sector. With a spirit of innovation, we strive to empower local farmers towards the future of agriculture.
             </p>
           </div>
         </div>
@@ -74,12 +74,27 @@ export default function AboutUs() {
           <h3 className="text-3xl font-bold text-[#043927] mb-10">Company Values</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
             {[
-              { title: "Innovative", desc: "We constantly experiment with cutting-edge technology for the future of farming." },
-              { title: "Collaborative", desc: "Long-term partnerships with farmers, institutions, and communities." },
-              { title: "Resilient", desc: "We adapt and persist through industry challenges." },
-              { title: "Green", desc: "Our solutions always consider environmental impact." },
+              {
+                title: 'Innovative',
+                desc: 'We constantly experiment with cutting-edge technology for the future of farming.',
+              },
+              {
+                title: 'Collaborative',
+                desc: 'Long-term partnerships with farmers, institutions, and communities.',
+              },
+              {
+                title: 'Resilient',
+                desc: 'We adapt and persist through industry challenges.',
+              },
+              {
+                title: 'Green',
+                desc: 'Our solutions always consider environmental impact.',
+              },
             ].map((val, idx) => (
-              <div key={idx} className="p-6 bg-gray-100 rounded-lg shadow hover:shadow-md transition">
+              <div
+                key={idx}
+                className="p-6 bg-gray-100 rounded-lg shadow hover:shadow-md transition"
+              >
                 <h4 className="text-xl font-semibold text-[#043927] mb-2">{val.title}</h4>
                 <p className="text-gray-700">{val.desc}</p>
               </div>
@@ -105,22 +120,22 @@ export default function AboutUs() {
           >
             {[
               {
-                year: "2025",
-                title: "The Birth of Frent.com",
-                desc: "Frent.com was founded as an agritech startup to address the inefficiencies in traditional agriculture in Indonesia.",
-                image: "/sejarah1.jpg",
+                year: '2025',
+                title: 'The Birth of Frent.com',
+                desc: 'Frent.com was founded as an agritech startup to address the inefficiencies in traditional agriculture in Indonesia.',
+                image: '/sejarah1.jpg',
               },
               {
-                year: "2026",
-                title: "National Collaborations",
-                desc: "Partnered with the Ministry of Agriculture and digital startups to expand the impact of technology to local farmers.",
-                image: "/sejarah2.jpg",
+                year: '2026',
+                title: 'National Collaborations',
+                desc: 'Partnered with the Ministry of Agriculture and digital startups to expand the impact of technology to local farmers.',
+                image: '/sejarah2.jpg',
               },
               {
-                year: "2028",
-                title: "Regional Expansion",
-                desc: "Expanded services to Southeast Asia and launched the Frent Analytics platform for AI-based land management.",
-                image: "/sejarah3.jpg",
+                year: '2028',
+                title: 'Regional Expansion',
+                desc: 'Expanded services to Southeast Asia and launched the Frent Analytics platform for AI-based land management.',
+                image: '/sejarah3.jpg',
               },
             ].map((event, idx) => (
               <SwiperSlide key={idx}>
@@ -158,10 +173,10 @@ export default function AboutUs() {
               </p>
               <div className="grid grid-cols-2 gap-6 mt-8">
                 {[
-                  { value: "1,500+", label: "Farmers Empowered" },
-                  { value: "20+", label: "Agritech Projects" },
-                  { value: "10 Years", label: "Innovation Experience" },
-                  { value: "3 Countries", label: "Service Reach" },
+                  { value: '1,500+', label: 'Farmers Empowered' },
+                  { value: '20+', label: 'Agritech Projects' },
+                  { value: '10 Years', label: 'Innovation Experience' },
+                  { value: '3 Countries', label: 'Service Reach' },
                 ].map((stat, idx) => (
                   <div key={idx} className="border-l-4 border-green-600 pl-4">
                     <p className="text-4xl font-bold text-gray-900">{stat.value}</p>

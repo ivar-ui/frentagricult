@@ -1,43 +1,6 @@
 'use client';
 
-import { useState } from 'react';
-
 export default function ContactPage() {
-  const [loading, setLoading] = useState(false);
-  const [sent, setSent] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-    const data = {
-      name: formData.get('nama'),
-      email: formData.get('email'),
-      message: formData.get('pesan'),
-    };
-
-    setLoading(true);
-    try {
-      const res = await fetch('/api/kirim-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
-
-      if (res.ok) {
-        setSent(true);
-        form.reset();
-      } else {
-        alert('Failed to send message.');
-      }
-    } catch (error) {
-      console.error(error);
-      alert('An error occurred.');
-    } finally {
-      setLoading(false);
-    }
-  };
-
   return (
     <div className="bg-white py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -75,12 +38,7 @@ export default function ContactPage() {
 
           {/* Contact Form */}
           <div className="bg-gray-50 p-8 rounded-lg shadow-lg">
-            {sent && (
-              <div className="text-green-600 font-medium text-sm mb-4">
-                Message sent successfully!
-              </div>
-            )}
-            <form className="space-y-6" onSubmit={handleSubmit}>
+            <form className="space-y-6">
               <div>
                 <label htmlFor="nama" className="block text-sm font-medium text-gray-700">
                   Name
@@ -120,10 +78,9 @@ export default function ContactPage() {
               <div>
                 <button
                   type="submit"
-                  disabled={loading}
                   className="w-full inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-custom hover:bg-opacity-90 transition-colors"
                 >
-                  {loading ? 'Sending...' : 'Send Message'}
+                  Send Message
                 </button>
               </div>
             </form>
