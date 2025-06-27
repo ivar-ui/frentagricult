@@ -1,6 +1,7 @@
 'use client';
 
 import './globals.css';
+import Image from 'next/image';
 
 export default function Page() {
   function handleApplyClick() {
@@ -11,10 +12,12 @@ export default function Page() {
     <>
       {/* HERO SECTION */}
       <section className="relative h-[600px] bg-gray-900">
-        <img
+        <Image
           src="/konten1 (2).jpg"
           alt="Hero Background"
-          className="absolute inset-0 w-full h-full object-cover opacity-50"
+          fill
+          className="absolute inset-0 object-cover opacity-50"
+          priority
         />
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-transparent" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
@@ -73,9 +76,11 @@ export default function Page() {
                 key={i}
                 className="bg-gray-100 rounded-lg overflow-hidden shadow hover:shadow-lg transition"
               >
-                <img
+                <Image
                   src={service.image}
                   alt={service.title}
+                  width={400}
+                  height={256}
                   className="object-cover w-full h-64"
                 />
                 <div className="p-6">
@@ -128,9 +133,11 @@ export default function Page() {
                 key={i}
                 className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition text-center"
               >
-                <img
+                <Image
                   src={feature.image}
                   alt={feature.title}
+                  width={400}
+                  height={160}
                   className="w-full h-40 object-cover rounded-md mb-5"
                 />
                 <div className="inline-flex items-center justify-center w-12 h-12 bg-custom text-white rounded-full shadow mb-4">
@@ -173,7 +180,13 @@ export default function Page() {
               },
             ].map((item, idx) => (
               <div key={idx} className="bg-gray-50 rounded-lg overflow-hidden shadow hover:shadow-md transition">
-                <img src={item.image} alt={item.title} className="w-full h-56 object-cover" />
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  width={400}
+                  height={224}
+                  className="w-full h-56 object-cover"
+                />
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900">{item.title}</h3>
                   <p className="mt-2 text-gray-600">{item.desc}</p>
